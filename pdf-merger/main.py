@@ -1,11 +1,14 @@
-from pypdf import PdfReader, PdfWriter
+from PyPDF2 import PdfMerger
+merge = PdfMerger()
+try:
+    n = int(input("tell me the how many number of pdf you like to add : "))
+    for i in range (0,n):
+        pdf = input(f"give us the name of the of the pdf name {i+1} : ")
+        merge.append(pdf)
+except Exception as e:
+    print("invalid input ")
+    exit(1)
 
-merger = PdfWriter()
-
-for pdf in ["file1.pdf", "file2.pdf", "file3.pdf"]:
-    reader = PdfReader(pdf, strict=False)  # ignore strict parsing errors
-    merger.append(reader)
-
-with open("merged.pdf", "wb") as f_out:
-    merger.write(f_out)
+merge.write("merged.pdf")
+merge.close()
 
