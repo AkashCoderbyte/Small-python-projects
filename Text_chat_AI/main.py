@@ -1,7 +1,7 @@
 # Let's create AI chat bot 
 
 from openai import OpenAI
-
+api_key"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"
 client = OpenAI(base_url= "https://openrouter.ai/api/v1",api_key="Paste your key here from open ai/ open router-> to get free ap")
 messages =[{"role":"system","content":"You are good in eveything with perfect answers."}]
 while True:
@@ -21,3 +21,4 @@ while True:
 
 
     
+
